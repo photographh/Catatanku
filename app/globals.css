@@ -1,0 +1,87 @@
+:root {
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --ink: #1b2430;
+  --muted: #6b7684;
+  --line: #d9dfe6;
+  --accent: #1f5eff;
+  --danger: #d6342c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.wrap { max-width: 640px; margin: 0 auto; padding: 40px 20px 80px; }
+
+h1 { font-size: 2rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+h2 { font-size: 1.05rem; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 24px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.form { display: grid; gap: 10px; margin-bottom: 24px; }
+
+input, textarea {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+}
+input:focus, textarea:focus, button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+textarea { resize: vertical; }
+
+button, .btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 9px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .btn:hover { filter: brightness(0.94); }
+.ghost { background: transparent; color: var(--accent); }
+.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+
+.row { display: flex; gap: 8px; }
+
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.list .card { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.list p { margin: 0 0 6px; white-space: pre-wrap; word-break: break-word; }
+.list small { color: var(--muted); }
+.actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+.empty { color: var(--muted); }
+.error {
+  background: #fdecea;
+  color: #8a1f19;
+  border: 1px solid #f3b9b5;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+  .list .card { flex-direction: column; }
+}
